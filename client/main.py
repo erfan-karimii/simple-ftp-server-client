@@ -21,7 +21,7 @@ def connect_ftp(server, username, password):
 
 def list_files(ftp,directory="."):
     try:
-        files = ftp.nlst("..\masoud")  # List files and directories
+        files = ftp.nlst(directory)  # List files and directories
         print("Files and directories on the server:")
         for file in files:
             print(f" - {file}")
@@ -57,25 +57,19 @@ def main():
 
     # List files on the server
     list_files(ftp)
-    
-    print("sleep")
-    sleep(3)
 
     # Example of downloading a file
-    filename_to_download = 'a.txt'  # Change to the filename you want to download
+    filename_to_download = 'b.txt'  # Change to the filename you want to download
     local_download_path = filename_to_download
     download_file(ftp, filename_to_download, local_download_path)
 
-    print("sleep")
-    sleep(3)
     
     # Example of uploading a file
-    local_upload_path = 'b.txt'  # Change to your local file path
+    local_upload_path = 'report.pdf'  # Change to your local file path
     filename_to_upload = local_upload_path
     upload_file(ftp, local_upload_path, filename_to_upload)
 
-    print("sleep")
-    sleep(3)
+
     # Close the FTP connection
     ftp.quit()
 
