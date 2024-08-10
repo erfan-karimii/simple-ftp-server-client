@@ -2,8 +2,8 @@ from ftplib import FTP
 from time import sleep
 
 
-# IP_ADDR = "87.248.153.134"
-IP_ADDR = "127.0.0.1"
+IP_ADDR = "87.248.153.134"
+# IP_ADDR = "127.0.0.1"
 
 PORT = 21
 
